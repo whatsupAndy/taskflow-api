@@ -36,4 +36,19 @@ public class TasksController : ControllerBase
         tasks.Remove(task);
         return NoContent();
     }
+
+    [HttpPut("{id}")]
+    public IActionResult UpdateTask(int id, TaskItem updatedTask)
+    {
+        var task = tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+        {
+            return NotFound();
+        }
+
+        task.Title = updatedTask.Title;
+        task.IsDone = updatedTask.IsDone;
+
+        return Ok(task);
+    }
 }
