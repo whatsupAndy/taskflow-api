@@ -5,3 +5,5 @@ obj/
 *.user
 .DS_Store
 appsettings.Development.json
+
+tasks.db
