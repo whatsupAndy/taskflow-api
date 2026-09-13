@@ -40,6 +40,7 @@ public class TasksController : ControllerBase
         {
             return NotFound();
         }
+
         var taskDto = MapTaskToDto(task);
         return Ok(taskDto);
     }
@@ -91,7 +92,7 @@ public class TasksController : ControllerBase
         return NoContent();
     }
 
-    TaskDto MapTaskToDto(TaskItem task)
+    private TaskDto MapTaskToDto(TaskItem task)
     {
         return new TaskDto
         {
